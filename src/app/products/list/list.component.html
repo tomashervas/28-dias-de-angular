@@ -1,1 +1,12 @@
-<p>list works!</p>
+<div class="mt-10">
+    <ul>
+        <li *ngFor="let product of products">
+            <a routerLink="/products/{{product.id}}">
+                <div class="flex justify-between p-3">
+                    <p>{{product.id}} <span class="ml-4">{{product.name}}</span></p>
+                    <p>{{product.price}} €</p>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>

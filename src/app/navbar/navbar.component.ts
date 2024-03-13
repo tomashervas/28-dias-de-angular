@@ -8,11 +8,17 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent {
   isAuthenticated = false;
+  username = '';
 
   constructor(private authService: AuthService, private router: Router) {
     this.authService.isAuthenticated.asObservable().subscribe(
       (isAuthenticated) => {
         this.isAuthenticated = isAuthenticated;
+      })
+
+    this.authService.user.asObservable().subscribe(
+      (user) => {
+        this.username = user;
       })
   }
 

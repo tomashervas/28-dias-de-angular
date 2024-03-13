@@ -1,6 +1,6 @@
  <div class="flex justify-between p-4">
      <h1 class="text-xl font-bold">28 días angular</h1>
-     <p *ngIf="isAuthenticated">Bienvenido!</p>
+     <p *ngIf="isAuthenticated">Bienvenido {{username}}!</p>
      <div>
         <ul class="flex space-x-4">
             <li><a  routerLinkActive="active" routerLink="/home">Home</a></li>
