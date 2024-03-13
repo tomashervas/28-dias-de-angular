@@ -1,10 +1,14 @@
  <div class="flex justify-between p-4">
      <h1 class="text-xl font-bold">28 días angular</h1>
+     <p *ngIf="isAuthenticated">Bienvenido!</p>
      <div>
         <ul class="flex space-x-4">
             <li><a  routerLinkActive="active" routerLink="/home">Home</a></li>
+            <li *ngIf="isAuthenticated" ><a  routerLinkActive="active" routerLink="/products">Products</a></li>
             <li><a  routerLinkActive="active" routerLink="/about">About</a></li>
             <li><a routerLinkActive="active" routerLink="/contact">Contact</a></li>
+            <li *ngIf="!isAuthenticated" ><a  routerLinkActive="active" routerLink="/auth/signin">Signin</a></li>
+            <li *ngIf="isAuthenticated"><button (click)="onLogout()">Logout</button></li>
         </ul>
 
      </div>
