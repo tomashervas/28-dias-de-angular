@@ -17,7 +17,7 @@ import { DetailComponent } from './detail/detail.component';
   imports: [
     CommonModule,
     ProductsRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ]
 })
 export class ProductsModule { }

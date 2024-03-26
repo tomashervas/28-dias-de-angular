@@ -3,16 +3,18 @@
         <h2 class="text-2xl mb-6">Product Detail</h2>
         <a routerLink="/products"><- Back</a>
     </div>
-    <div class="space-y-4 md:w-3/4">
-        <div class="flex items-center gap-4 justify-between">
-            <p class="text-xl font-semibold">{{product.name}}</p>
-            <p>id: {{product.id}}</p>
+    <div class="flex flex-col-reverse md:flex-row gap-6 ">
+        <div class="space-y-4 md:w-3/4">
+            <div class="flex items-center gap-4 justify-between">
+                <p class="text-xl font-semibold">{{product.name}}</p>
+                <p>id: {{product.id}}</p>
+            </div>
+            <p>Description: {{product.description}}</p>
+            <p>Price: <span class="font-semibold">{{product.price}} €</span></p>
+            <p class="text-sm">Product created at: {{product.createdAt | date: 'dd-MM-yyyy'}}</p>
         </div>
-        <p>Description: {{product.description}}</p>
-        <p>Price: <span class="font-semibold">{{product.price}} €</span></p>
-        <p class="text-sm">Product created at: {{product.createdAt | date: 'dd-MM-yyyy'}}</p>
-    </div>
-    <div class="">
-        <img src="" alt="">
+        <div class="flex justify-center">
+            <img src="https://picsum.photos/300" alt="">
+        </div>
     </div>
 </div>

@@ -1,10 +1,16 @@
 <div class="mt-10">
-    <ul>
+    <div class="flex justify-between mb-6">
+        <h2 class="text-2xl">Products</h2>
+        <a routerLink="/products/new" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg">Add new product +</a>
+    </div>
+
+    <ul class="divide-y-2">
         <li *ngFor="let product of products">
             <a routerLink="/products/{{product.id}}">
-                <div class="flex justify-between p-3">
+                <div class="flex justify-between p-3 hover:bg-gray-200 rounded-md group/item">
                     <p>{{product.id}} <span class="ml-4">{{product.name}}</span></p>
                     <p>{{product.price}} €</p>
+                    <button class="border invisible group-hover/item:visible border-red-500 hover:bg-red-200 py-1 px-2 rounded-md">Del</button>
                 </div>
             </a>
         </li>
