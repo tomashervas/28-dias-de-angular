@@ -6,3 +6,10 @@ export interface Product {
     createdAt: Date;
     updatedAt: Date;
 }
+
+export interface ProductsResponse {
+    data: Product[];
+    currentPage: number;
+    totalPages: number;
+
+}
