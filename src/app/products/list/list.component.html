@@ -1,4 +1,4 @@
-<div class="mt-10">
+<div class="md:mt-4 p-4">
     <div class="flex justify-between items-center mb-6">
         <h2 class="text-2xl">Products</h2>
         <div class="flex items-center gap-4">
@@ -7,7 +7,7 @@
             <a routerLink="/products" [queryParams]="{page:currentPage + 1}" *ngIf="currentPage < totalPages" class="p-3">-></a>
         </div>
 
-        <a routerLink="/products/new" class="border-2 border-blue-500 hover:bg-blue-300 py-2 px-4 rounded-lg">Add new product +</a>
+        <a routerLink="/products/new" class="border-2 border-blue-500 hover:bg-blue-300 px-3 md:py-1 md:px-4 rounded-full"><span class="hidden md:inline">Add new product</span> +</a>
     </div>
 
     <ul class="divide-y-2">

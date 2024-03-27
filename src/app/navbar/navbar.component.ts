@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class NavbarComponent {
   isAuthenticated = false;
   username = '';
+  isMenuOpen = false;
 
   constructor(private authService: AuthService, private router: Router) {
     this.authService.isAuthenticated.asObservable().subscribe(
@@ -20,6 +21,10 @@ export class NavbarComponent {
       (user) => {
         this.username = user;
       })
+  }
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
   }
 
 

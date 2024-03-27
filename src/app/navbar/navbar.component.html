@@ -1,14 +1,15 @@
  <div class="flex justify-between p-4">
      <h1 class="text-xl font-bold">Technostore</h1>
-     <p *ngIf="isAuthenticated">Bienvenido {{username}}!</p>
-     <div>
-        <ul class="flex space-x-4">
-            <li><a  routerLinkActive="active" routerLink="/home">Home</a></li>
-            <li *ngIf="isAuthenticated" ><a  routerLinkActive="active" routerLink="/products">Products</a></li>
-            <li><a  routerLinkActive="active" routerLink="/about">About</a></li>
-            <li><a routerLinkActive="active" routerLink="/contact">Contact</a></li>
-            <li *ngIf="!isAuthenticated" ><a  routerLinkActive="active" routerLink="/auth/signin">Signin</a></li>
-            <li *ngIf="isAuthenticated"><button (click)="onLogout()">Logout</button></li>
+     <p *ngIf="isAuthenticated" class="hidden md:block">Bienvenido {{username}}!</p>
+     <div class="flex flex-col items-end">
+        <button (click)="toggleMenu()" class="md:hidden">☰</button>
+        <ul [class.hidden]="!isMenuOpen" class="md:flex md:space-x-4">
+            <li (click)="toggleMenu()"><a  routerLinkActive="active" routerLink="/home">Home</a></li>
+            <li (click)="toggleMenu()" *ngIf="isAuthenticated" ><a  routerLinkActive="active" routerLink="/products">Products</a></li>
+            <li (click)="toggleMenu()"><a  routerLinkActive="active" routerLink="/about">About</a></li>
+            <li (click)="toggleMenu()"><a routerLinkActive="active" routerLink="/contact">Contact</a></li>
+            <li (click)="toggleMenu()" *ngIf="!isAuthenticated" ><a  routerLinkActive="active" routerLink="/auth/signin">Signin</a></li>
+            <li (click)="toggleMenu()" *ngIf="isAuthenticated"><button (click)="onLogout()">Logout</button></li>
         </ul>
 
      </div>
