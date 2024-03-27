@@ -8,6 +8,7 @@ import { DetailComponent } from './detail/detail.component';
 const routes: Routes = [
   { path: '', component: ListComponent },
   { path: 'new', component: NewComponent },
+  { path: ':id/edit', component: NewComponent },
   { path: ':id', component: DetailComponent },
   
 ];

@@ -18,6 +18,14 @@ export class ProductsService {
     return this.http.get<Product>(`http://localhost:3437/api/products/${id}`);
   }
 
+  createProduct(product: Product): Observable<Product> {
+    return this.http.post<Product>('http://localhost:3437/api/products', product);
+  }
+
+  updateProduct(id: number, product: Product): Observable<any> {
+    return this.http.put<any>(`http://localhost:3437/api/products/${id}`, product);
+  }
+
   deleteProduct(id: number): Observable<any> {
     return this.http.delete<any>(`http://localhost:3437/api/products/${id}`, {observe: 'response'});
   }
